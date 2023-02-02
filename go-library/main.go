@@ -125,8 +125,7 @@ func ModifyInt32Slice(input []int32) (*int32, int) {
 //export ModifyDemoStruct
 func ModifyDemoStruct(input1 *C.struct_DemoStruct, input2 C.struct_DemoStruct) C.struct_DemoStruct {
 	// This modifies the first input while returning a new DemoStruct based on the second input. The struct type is
-	// declared in C, as there is not yet a way to pass standard Go structs. Additionally, the struct needs to be
-	// declared in the same file that it is being used in.
+	// declared in C, as there is not yet a way to pass standard Go structs.
 	input1.A = ^input1.A
 	input1.B = ^input1.B
 	return C.struct_DemoStruct{
